@@ -1,5 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http'
+import { RouterModule } from '@angular/router';
+import { AngularEmojisModule } from 'angular-emojis';
+
+import { ROUTES } from './routes';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
@@ -16,7 +21,10 @@ import { NavbarComponent } from './components/shared/navbar/navbar.component';
     NavbarComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule,
+    AngularEmojisModule,
+    RouterModule.forRoot(ROUTES, {useHash: true})
   ],
   providers: [],
   bootstrap: [AppComponent]
