@@ -19,16 +19,15 @@ export class HomeComponent {
     this.spotifyService.getPlaylistById()
     .subscribe( (data: any) => { 
       console.log(data);
-      data.items.forEach((item:any) => {
-        this.tracksAdded.push(item.track);
-        
-        console.log(item.added_by.id); 
-      });
+      this.tracksAdded = data;  
+      // data.items.forEach((item:any) => {
+      //   this.tracksAdded.push(item.track);
+      // });
     });
 
     this.spotifyService.getUserById('21awov6tu6go5ao4lduaafbqy')
     .subscribe( (data: any) => { 
-      console.log(data);
+      // console.log(data);
     });
   }
 
