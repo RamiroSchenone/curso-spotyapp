@@ -1,9 +1,16 @@
-<h1 class="h1">
-    <angular-emojis [name]="'cupid'" size="50"> </angular-emojis>
-    Baby
-</h1>
-<hr>
-<app-tarjetas
-    [items]="tracksAdded"
-    [tracks]="true"
-></app-tarjetas>
+<app-loading
+    class="animated fadeIn"
+    *ngIf="$loading"
+></app-loading>
+
+<div *ngIf="!$loading" class="animated fadeIn">
+    <h1 class="h1">
+        <angular-emojis [name]="'cupid'" size="50"> </angular-emojis>
+        Baby
+    </h1>
+    <hr>
+    <app-tarjetas
+        [items]="tracksAdded"
+        [tracks]="true"
+    ></app-tarjetas>
+</div>

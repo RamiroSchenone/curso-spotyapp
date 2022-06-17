@@ -12,14 +12,16 @@ export class HomeComponent {
   tracksAdded: any[] = [];
   usersid: any[] = [];
 
+  $loading: boolean = true;
+
   constructor(
     private spotifyService: SpotifyService,
-    private router: Router
   ) { 
     this.spotifyService.getPlaylistById()
     .subscribe( (data: any) => { 
       // console.log(data);
       this.tracksAdded = data;  
+      this.$loading = false;
       // data.items.forEach((item:any) => {
       //   this.tracksAdded.push(item.track);
       // });

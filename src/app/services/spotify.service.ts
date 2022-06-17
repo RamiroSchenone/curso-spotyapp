@@ -14,7 +14,7 @@ export class SpotifyService {
   getQuery(query: string){
     const url = `https://api.spotify.com/v1/${query}`;
     const headers = new HttpHeaders({
-      'Authorization': 'Bearer BQCQ0FrLscJAj0T-dpff999Y4wboQIE8JmL-ScRWdjdBgkLM0n1UieF6OZnzp7lKQNc9c_Dm27r0ZsEQjfgWy6LBIsDhrSyBqbqwVF99Bydkkxv4ZCkl' //renovar token con el post al servicio de spoty en postman, se vence cada 1 hora
+      'Authorization': 'Bearer BQBXtGEflWsC26X9Ugr8nZSxEc6R1EYaPvPveTcrUYc03OqsB-A7t8EG5o89lL3v6bDajpiCZgH0LAmN1NCrynrfsxOuy9aglmfx-RUN4lHpVdGZwMVv' //renovar token con el post al servicio de spoty en postman, se vence cada 1 hora
     });
     return this.http.get(url, {headers});
   }

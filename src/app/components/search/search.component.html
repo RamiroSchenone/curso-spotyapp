@@ -1,11 +1,19 @@
-<div class="row mb-5 mt-5">
+<div class="row mb-5 mt-5 animated fadeIn">
     <div class="col">
         <input #criteria type="text" (keyup)="search(criteria.value)" class="form-control" placeholder="Buscar artista...">
+        <p *ngIf="$artistsEmpty" class="mt-3 text-center">No se encontraron registros.</p>
     </div>
 </div>
 
+<app-loading
+    *ngIf="$loading"
+    class="animated fadeIn"
+></app-loading>
 
 <app-tarjetas
+    class="animated fadeIn"
+    *ngIf="!$loading"
     [items]="artistas"
     [artists]="true"
 ></app-tarjetas>
+
