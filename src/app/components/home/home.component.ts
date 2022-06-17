@@ -18,7 +18,7 @@ export class HomeComponent {
   ) { 
     this.spotifyService.getPlaylistById()
     .subscribe( (data: any) => { 
-      console.log(data);
+      // console.log(data);
       this.tracksAdded = data;  
       // data.items.forEach((item:any) => {
       //   this.tracksAdded.push(item.track);
