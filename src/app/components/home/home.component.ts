@@ -10,6 +10,7 @@ import { SpotifyService } from 'src/app/services/spotify.service';
 export class HomeComponent {
 
   tracksAdded: any[] = [];
+  usersid: any[] = [];
 
   constructor(
     private spotifyService: SpotifyService,
@@ -20,7 +21,14 @@ export class HomeComponent {
       console.log(data);
       data.items.forEach((item:any) => {
         this.tracksAdded.push(item.track);
+        
+        console.log(item.added_by.id); 
       });
+    });
+
+    this.spotifyService.getUserById('21awov6tu6go5ao4lduaafbqy')
+    .subscribe( (data: any) => { 
+      console.log(data);
     });
   }
 
