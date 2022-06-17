@@ -1,0 +1,28 @@
+<div class="row justify-content-center m-5">
+    <div 
+        *ngFor="let item of items; let i = index;" 
+        class="col-3 m-1 card text-center"
+        >
+
+        <div *ngIf="tracks">
+            <img class="card-img-top mt-3" [src]="item.album.images| noimage" alt="img de {{item.name}}">
+            <div class="card-body">
+                <h4 class="card-title"><p>{{item.name}}</p></h4>
+                <p class="card-text">
+                    <span *ngFor="let artist of item.artists" class="badge rounded-pill text-bg-dark">{{artist.name}}</span>
+                </p>
+            </div>
+        </div>
+
+        <div *ngIf="artists">
+            <img class="card-img-top mt-3" [src]="item.images | noimage" alt="">
+            <div class="card-body">
+                <h4 class="card-title"><p>{{item.name}}</p></h4>
+                <p class="card-text">
+                    <span>Followers: {{item.followers.total}}</span>
+                </p>
+            </div>
+        </div>
+
+    </div>
+</div>

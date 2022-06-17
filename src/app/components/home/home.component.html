@@ -2,19 +2,8 @@
     <angular-emojis [name]="'cupid'" size="50"> </angular-emojis>
     Baby
 </h1>
-<hr class="mb-5">
-<div  class="row justify-content-center">
-    <div 
-        *ngFor="let track of tracksAdded; let i = index;" 
-        class="col-3 m-1 card text-center"
-        (click)="getTrackUrlExternal(track)"        
-        >
-        <img class="card-img-top mt-3" src="{{track.album.images[0].url}}" alt="img de {{track.name}}">
-        <div class="card-body">
-            <h4 class="card-title"><p>{{track.name}}</p></h4>
-            <p class="card-text">
-                <span *ngFor="let artist of track.artists" class="badge rounded-pill text-bg-dark">{{artist.name}}</span>
-            </p>
-        </div>
-    </div>
-</div>
+<hr>
+<app-tarjetas
+    [items]="tracksAdded"
+    [tracks]="true"
+></app-tarjetas>
