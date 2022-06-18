@@ -1,0 +1,6 @@
+.card{
+    background-color: #F0F0F0;
+}
+.card:hover{
+    opacity: .7;
+}

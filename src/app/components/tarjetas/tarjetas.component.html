@@ -1,8 +1,7 @@
 <div class="row justify-content-center m-5">
     <div 
         *ngFor="let item of items; let i = index;" 
-        class="col-3 m-1 card text-center"
-        >
+        class="col-3 m-1 card text-center">
 
         <div *ngIf="tracks">
             <img class="card-img-top mt-3" [src]="item.album.images| noimage" alt="img de {{item.name}}">
