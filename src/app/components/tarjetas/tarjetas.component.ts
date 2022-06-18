@@ -23,7 +23,8 @@ export class TarjetasComponent implements OnInit {
     if(item){
       if(item.type == "track"){
         // console.log(`id track = ${item.id}`);
-        this.router.navigate(['/track', item.id]);
+        // this.router.navigate(['/track', item.id]);
+        window.open(`${item.external_urls.spotify}`, '_blank');
       }
       else if(item.type == "artist"){
         // console.log(`id artist = ${item.id}`);

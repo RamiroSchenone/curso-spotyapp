@@ -42,4 +42,8 @@ export class ArtistaComponent {
       this.$loading = false;
     });
   }
+
+  redirectUrlExternal(track: any){
+    window.open(`${track.external_urls.spotify}`, '_blank');
+  }
 }

@@ -4,3 +4,6 @@
 .card:hover{
     opacity: .7;
 }
+audio{
+    width: 245px;
+}

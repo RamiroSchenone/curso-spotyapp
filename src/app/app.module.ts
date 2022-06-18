@@ -14,7 +14,6 @@ import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { NoimagePipe } from './pipes/noimage.pipe';
 import { TarjetasComponent } from './components/tarjetas/tarjetas.component';
 import { LoadingComponent } from './components/shared/loading/loading.component';
-import { TrackComponent } from './components/track/track.component';
 
 @NgModule({
   declarations: [
@@ -25,8 +24,7 @@ import { TrackComponent } from './components/track/track.component';
     NavbarComponent,
     NoimagePipe,
     TarjetasComponent,
-    LoadingComponent,
-    TrackComponent
+    LoadingComponent
   ],
   imports: [
     BrowserModule,
