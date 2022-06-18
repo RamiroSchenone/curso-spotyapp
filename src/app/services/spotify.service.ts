@@ -57,4 +57,14 @@ export class SpotifyService {
   getArtistById(id: string){
     return this.getQuery(`artists/${id}`);
   }
+
+  getTopTracksByArtist(id: string){
+    let getQuery = this.getQuery(`artists/${id}/top-tracks?market=ES`)
+    .pipe(
+      map((data: any) => {
+        return data.tracks;
+      })
+    );
+    return getQuery;
+  }
 }

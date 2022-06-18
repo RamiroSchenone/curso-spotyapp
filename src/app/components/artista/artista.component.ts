@@ -11,6 +11,7 @@ export class ArtistaComponent {
 
   idArtist: string = "";
   artist: any = {};
+  topTracks: any = [];
 
   $loading: boolean = true;
 
@@ -21,11 +22,24 @@ export class ArtistaComponent {
     this.router.params.subscribe(params => {
       // console.log(params['id']);
       this.idArtist = params['id'];
-      this.spotifyService.getArtistById(this.idArtist).subscribe( data => {
-        console.log(data);
-        this.artist = data;
-        this.$loading = false;
-      });
+      this.getArtistById(this.idArtist);
+      this.getTopTracksByArtist(this.idArtist);
+      
+    });
+  }
+
+  getArtistById(id: string){
+    this.spotifyService.getArtistById(id).subscribe( data => {
+      // console.log(data);
+      this.artist = data;
+    });
+  }
+
+  getTopTracksByArtist(id: string){
+    this.spotifyService.getTopTracksByArtist(id).subscribe( (data:any) => {
+      console.log(data);
+      this.topTracks = data;
+      this.$loading = false;
     });
   }
 }

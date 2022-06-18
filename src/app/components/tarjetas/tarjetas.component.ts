@@ -22,11 +22,11 @@ export class TarjetasComponent implements OnInit {
   onClickCard(item:any){
     if(item){
       if(item.type == "track"){
-        console.log(`id track = ${item.id}`);
+        // console.log(`id track = ${item.id}`);
         this.router.navigate(['/track', item.id]);
       }
       else if(item.type == "artist"){
-        console.log(`id artist = ${item.id}`);
+        // console.log(`id artist = ${item.id}`);
         this.router.navigate(['/artist', item.id]);
       }
       else{
