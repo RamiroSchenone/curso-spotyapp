@@ -27,10 +27,10 @@ export class HomeComponent {
       // });
     });
 
-    this.spotifyService.getUserById('21awov6tu6go5ao4lduaafbqy')
-    .subscribe( (data: any) => { 
-      // console.log(data);
-    });
+    // this.spotifyService.getUserById('21awov6tu6go5ao4lduaafbqy')
+    // .subscribe( (data: any) => { 
+    //   // console.log(data);
+    // });
   }
 
   getTrackUrlExternal(track: any){

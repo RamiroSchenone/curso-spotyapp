@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-tarjetas',
@@ -11,9 +12,26 @@ export class TarjetasComponent implements OnInit {
   @Input() tracks: boolean = false;
   @Input() artists: boolean = false;
 
-  constructor() { }
+  constructor(
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
   }
 
+  onClickCard(item:any){
+    if(item){
+      if(item.type == "track"){
+        console.log(`id track = ${item.id}`);
+        this.router.navigate(['/track', item.id]);
+      }
+      else if(item.type == "artist"){
+        console.log(`id artist = ${item.id}`);
+        this.router.navigate(['/artist', item.id]);
+      }
+      else{
+        console.log(item);
+      }
+    }
+  }
 }
