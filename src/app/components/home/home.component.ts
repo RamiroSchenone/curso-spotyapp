@@ -14,6 +14,10 @@ export class HomeComponent {
 
   $loading: boolean = true;
 
+  error: boolean = false;
+  errorStatus: any;
+  errorMessage: any;
+
   constructor(
     private spotifyService: SpotifyService,
   ) { 
@@ -25,15 +29,16 @@ export class HomeComponent {
       // data.items.forEach((item:any) => {
       //   this.tracksAdded.push(item.track);
       // });
+    }, err => {
+      this.errorStatus = err.error.error.status;
+      this.errorMessage = err.error.error.message;
+      this.error = true;
+      this.$loading = false;
     });
 
     // this.spotifyService.getUserById('21awov6tu6go5ao4lduaafbqy')
     // .subscribe( (data: any) => { 
     //   // console.log(data);
     // });
-  }
-
-  getTrackUrlExternal(track: any){
-    window.open(`${track.external_urls.spotify}`, '_blank');
   }
 }

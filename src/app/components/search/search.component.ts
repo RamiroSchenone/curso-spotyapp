@@ -13,6 +13,10 @@ export class SearchComponent {
 
   artistas: any[] = [];
 
+  error: boolean = false;
+  errorStatus: any;
+  errorMessage: any;
+
   constructor(
     private spotifyService: SpotifyService
   ) {}
@@ -28,6 +32,11 @@ export class SearchComponent {
         this.artistas = data;
         this.$loading = false;
         this.$artistsEmpty = false;
+      }, err => {
+        this.errorStatus = err.error.error.status;
+        this.errorMessage = err.error.error.message;
+        this.error = true;
+        this.$loading = false;
       });
     }
   }

@@ -3,7 +3,12 @@
     *ngIf="$loading"
 ></app-loading>
 
-<div *ngIf="!$loading" class="animated fadeIn">
+<div *ngIf="error" class="alert alert-danger animated fadeIn" role="alert">
+    <h4 class="alert-heading">Error {{ errorStatus }}</h4>
+    {{ errorMessage }}
+</div>
+
+<div *ngIf="!$loading && !error" class="animated fadeIn">
     <h1 class="h1">
         <angular-emojis [name]="'cupid'" size="50"> </angular-emojis>
         Baby

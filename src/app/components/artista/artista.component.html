@@ -46,6 +46,10 @@
             <td>{{track.name}}</td>
             <td>
                 <audio [src]="track.preview_url" controls></audio>
+                <br>
+                <div style="width:93%;" class="text-center">
+                    <a [href]="track.external_urls.spotify" class="link-success" target="_blank">Reproducir en Spotify</a>
+                </div>
             </td>
           </tr>
         </tbody>
