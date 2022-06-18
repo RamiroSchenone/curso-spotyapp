@@ -24,7 +24,7 @@ export class SearchComponent {
       this.$artistsEmpty = true;
       this.artistas = [];
     }else{
-      this.spotifyService.getSongsArtists(criteria).subscribe( (data:any) => {
+      this.spotifyService.getArtistsByCriteria(criteria).subscribe( (data:any) => {
         this.artistas = data;
         this.$loading = false;
         this.$artistsEmpty = false;

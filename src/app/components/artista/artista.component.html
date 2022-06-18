@@ -1,1 +1,25 @@
-<p>artista works!</p>
+<app-loading
+    class="animated fadeIn"
+    *ngIf="$loading"
+></app-loading>
+
+<div class="container animated fadeIn" *ngIf="!$loading">
+    <div class="row">
+        <div class="col-4">
+            <img [src]="artist.images | noimage" class="img-thumbnail img-circle">
+            <h3 class="mt-3">{{artist.name}}</h3>
+            <p class="">
+                <a target="_blank" [href]="artist.external_urls.spotify">Ir a la página del artista</a>
+            </p>
+        </div>
+        <div class="col-4 text-center">
+            <p class="" style="font-size: 25px;">
+                <b>{{artist.followers.total}}</b> fws 
+            </p>
+            <h6 *ngFor="let genero of artist.genres" class="badge rounded-pill text-bg-success">{{genero}}</h6>
+        </div>
+        <div class="col-4 d-flex align-items-start justify-content-end">
+            <button routerLink="/search" type="button" class="btn btn-outline-success">Regresar</button>
+        </div>
+    </div>
+</div>
